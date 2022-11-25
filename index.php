@@ -42,12 +42,12 @@ $hotels = [
 
 // echo $hotels[4]['name'];
 
-$i = 0;
-while ($i < count($hotels)) {
-    $all_info = $hotels[$i];
-    // var_dump($all_info);
-    $i++;
-};
+// $i = 0;
+// while ($i < count($hotels)) {
+//     $all_info = $hotels[$i];
+//     // var_dump($all_info);
+//     $i++;
+// };
 
 ?>
 
@@ -69,19 +69,44 @@ while ($i < count($hotels)) {
 
 
 
-    <!-- ciclo for -->
-    <?php for ($i = 0; $i < $all_info; $i++) {
-        $all_info = $hotels[$i];
-    ?>
-
-        <p><?php echo $all_info['name'] ?></p>
 
 
 
 
 
 
-    <?php  };  ?>
+
+
+
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrizione</th>
+                <th scope="col">Parcheggio</th>
+                <th scope="col">Stelle</th>
+                <th scope="col">Distanza dal centro</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <!-- ciclo for -->
+                <?php for ($i = 0; $i < count($hotels); $i++) {
+                    $all_info = $hotels[$i];
+                ?>
+                    <th scope="row">1</th>
+                    <td><?php echo $all_info['name'] ?></td>
+                    <td><?php echo $all_info['description'] ?></td>
+                    <td><?php echo $all_info['parking'] ?></td>
+                    <td><?php echo $all_info['vote'] ?></td>
+                    <td><?php echo $all_info['distance_to_center'] ?></td>
+            </tr>
+        <?php  };  ?>
+
+        </tbody>
+    </table>
 
 
 </body>
